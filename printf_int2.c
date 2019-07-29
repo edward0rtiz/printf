@@ -1,9 +1,9 @@
 /**
- * p_int - prints integer
- * @arg: argument to print
+ * printf_int - prints integer
+ * @args: argument to print
  * Return: number of characters printed
  */
-int p_int(va_list args)
+int printf_int(va_list args)
 {
 	int n = va_arg(args, int);
 	int num, last = n % 10,	digit, exp = 1;
@@ -16,7 +16,7 @@ int p_int(va_list args)
 	{
 		_putchar('-');
 		num -= num;
-		n -=n;
+		n -= n;
 		last -= last;
 		i++;
 	}
@@ -41,16 +41,20 @@ int p_int(va_list args)
 
 	return (i);
 }
+
 /**
- * p_dec - prints decimal
- * @arg: argument to print
+ * printf_dec - prints decimal
+ * @args: argument to print
  * Return: number of characters printed
  */
-int p_dec(va_list arg)
+
+int printf_dec(va_list args)
 {
-     	int n = va_arg(args, int);
-	int num, last = n % 10,	digit, exp = 1;
+	int n = va_arg(args, int);
+	int num, last = n % 10,	digit;
 	int  i = 1;
+	int exp = 1;
+
 	n = n / 10;
 	num = n;
 
