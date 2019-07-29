@@ -15,7 +15,8 @@ int _printf(const char * const format, ...)
 		{"%r", printf_srev},
 		{"%R", printf_rot13},
 		{"%b", printf_bin},
-		{"%u", printf_unsigned}
+		{"%u", printf_unsigned},
+		{"%o", printf_oct}
 	};
 	va_list args;
 	int i = 0, j, len = 0;
