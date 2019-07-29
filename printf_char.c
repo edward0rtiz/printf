@@ -8,7 +8,6 @@
 int printf_char(va_list val)
 {
 	char s;
-	int i, len;
 
 	s = va_arg(val, int);
 	_putchar(s);
