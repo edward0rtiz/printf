@@ -72,24 +72,28 @@ typedef struct stackvar
 typedef struct convert_max_l_h
 {
 	char s;
-	int (*func)(stackvar *stack);
+	void (*func)(stackvar *stack);
 } convert_max_l_h;
 
 stackvar *stackinit(va_list *arguments_list, const char *format);
-int create_buffer(stackvar *stack);
-int printf_int(stackvar *stack);
-int place_buffer(stackvar *stack, char *str);
-char *_strlen(char *s);
+void create_buffer(stackvar *stack);
+void printf_int(stackvar *stack);
+void place_buffer(stackvar *stack, char *str);
+int _strlen(char *s);
 int *_strcpy(char *dest, char *src);
 int _strlenc(const char *s);
 int rev_string(char *s);
-int printf_lint(stackvar *stack);
-int create_int(stackvar *stack, long int n);
+void printf_lint(stackvar *stack);
+void create_int(stackvar *stack, long int n);
 int printf_rot13(stackvar *stack);
 int printf_r_str(stackvar *stack);
 int (*printf_max_l_h(stackvar *stack))(stackvar *);
 
+
 int _putchar(char c);
+void ret_buff(char *str, unsigned int n);
 int printf_exit(stackvar *stack);
 int _printf(const char *format, ...);
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
