@@ -3,7 +3,7 @@
  * stackinit - stock variables
  * @format: type char string type input
  * @arguments_list: type variadic of arguments
- * return: stack
+ * Return: stack value
  */
 
 stackvar *stackinit(va_list *arguments_list, const char *format)
@@ -24,9 +24,7 @@ stackvar *stackinit(va_list *arguments_list, const char *format)
 			stack->error = 1;
 		}
 		else
-		{
 			stack->error = 0;
-     		}
 	}
-	return(stack);
+	return (stack);
 }

@@ -1,7 +1,7 @@
 #include "holberton.h"
 /**
  * create_buffer - buffer that keeps different data types
- * @stack: type struc where is allocated printf arguments
+ * @stack: type struct where is allocated printf arguments
  *
  */
 
