@@ -22,6 +22,7 @@ typedef struct format
 	int (*f)();
 } convert_match;
 
+int printf_oct(va_list val);
 int printf_unsigned(va_list args);
 int printf_bin(va_list val);
 int printf_srev(va_list args);
