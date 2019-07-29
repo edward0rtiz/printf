@@ -2,7 +2,7 @@
 #define HOLBERTON_H
 
 /**
- * C libraries
+ * C - libraries
  * stdio.h: standard buffered input/output
  * stdlib.h: standard library definitions
  * stdarg.h: handle variable argument list
@@ -17,7 +17,7 @@
 #include <unistd.h>
 
 /**
- * macros: C statements as a pre-processor directive.
+ * description: C statements as a pre-processor directive.
  * LOWX - WIP
  * UPX - WIP
  * BUFFERSIZE - local buffer of 1024 chars in order to call write alap
@@ -30,32 +30,20 @@
 #define FALSE !TRUE
 
 /**
- * struct convert_match - match the conversion specifiers for printf
- * @s: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
- * @func: type pointer to function for the conversion specifier
- *
- */
-
- /**typedef struct convert_match
-{
-	char s;
-	void (*func)(stackvar *stack)
-} convert_match;
- */
-/**
  * struct stackvar - struct for required custom conversion specifiers
  * @char1: type char for buffer allocation
  * @char2: type char for validate n after %
  * @char3: type char for validate n n after %
- * @char4:
+ * @char4: type char for non custom specifiers
  * @error: type int replaces stdbool.h
- * @flag: type int for modifiers flags
+ * @flag: type int for conversion specifiers flags
  * @space: type int for space printing
  * @counter: type int for counter between index arrays
  * @counter_b: type int for counter between buffer and char
  * @buffer: type char pointer to buffer
  * @format: type char pointer to format str
- * @arguments:
+ * @arguments: arguments stacked in va_list
+ * @i: type int that goes over str
  */
 typedef struct stackvar
 {
@@ -74,7 +62,34 @@ typedef struct stackvar
 	va_list *arguments;
 } stackvar;
 
-stackvar *stackinit(va_list *arguments_list, const char *format);
-void create_buffer(stackvar *stack);
+/**
+ * struct convert_max_l_h - match the conversion specifiers for non custom
+ * @s: type char pointer of the specifier i.e (l, h) for (d, i, u, o, x, X)
+ * @func: type pointer to function for the conversion specifier
+ *
+ */
 
+typedef struct convert_max_l_h
+{
+	char s;
+	int (*func)(stackvar *stack);
+} convert_max_l_h;
+
+stackvar *stackinit(va_list *arguments_list, const char *format);
+int create_buffer(stackvar *stack);
+int printf_int(stackvar *stack);
+int place_buffer(stackvar *stack, char *str);
+char *_strlen(char *s);
+int *_strcpy(char *dest, char *src);
+int _strlenc(const char *s);
+int rev_string(char *s);
+int printf_lint(stackvar *stack);
+int create_int(stackvar *stack, long int n);
+int printf_rot13(stackvar *stack);
+int printf_r_str(stackvar *stack);
+int (*printf_max_l_h(stackvar *stack))(stackvar *);
+
+int _putchar(char c);
+int printf_exit(stackvar *stack);
+int _printf(const char *format, ...);
 #endif
