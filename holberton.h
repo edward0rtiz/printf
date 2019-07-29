@@ -8,7 +8,6 @@
 #include <unistd.h>
 
 
-#define BUFFERSIZE 1024
 
 /**
  * struct format - match the conversion specifiers for printf
