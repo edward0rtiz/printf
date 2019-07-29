@@ -29,13 +29,22 @@ void ret_buff(char *str, unsigned int n)
  */
 int _strlen(char *s)
 {
+<<<<<<< HEAD
 	unsigned int c = 0;
+=======
+	int c;
+
+	for (c = 0; s[c] != 0; c++)
+		;
+	return (c);
+>>>>>>> 3b8708970ef8812c1fced7fccb71f19c831c387a
 
 	while (s[len] != '\0')
 		len++;
 	return (len);
 }
 /**
+<<<<<<< HEAD
  * *_strcpy - Copies the string pointed to by src.
  * @dest: Type char pointer
  * @src: Type char pointer
@@ -80,6 +89,8 @@ int rev_string(char *s)
 	}
 }
 /**
+=======
+>>>>>>> 3b8708970ef8812c1fced7fccb71f19c831c387a
  * _strlenc - Strlen function but applied for constant char pointer s
  * @s: Type char pointer
  * Return: c
@@ -89,7 +100,6 @@ int _strlenc(const char *s)
 	int c;
 
 	for (c = 0; s[c] != 0; c++)
-	{
-	}
+		;
 	return (c);
 }
