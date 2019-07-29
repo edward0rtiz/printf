@@ -59,21 +59,27 @@ typedef struct stackvar
 } stackvar;
 
 stackvar *stackinit(va_list *arguments_list, const char *format);
-int create_buffer(stackvar *stack);
-int printf_int(stackvar *stack);
-int printf_string(va_list val);
-int place_buffer(stackvar *stack, char *str);
+
+void create_buffer(stackvar *stack);
+int printf_int(va_list val);
+void place_buffer(stackvar *stack, char *str);
 int _strlen(char *s);
-int printf_lint(stackvar *stack);
+int *_strcpy(char *dest, char *src);
+int _strlenc(const char *s);
+int rev_string(char *s);
 int create_int(stackvar *stack, long int n);
+int printf_lint(stackvar *stack);
 int printf_rot13(stackvar *stack);
 int printf_r_str(stackvar *stack);
 int (*printf_max_l_h(stackvar *stack))(stackvar *);
 int _strlenc(const char *s);
 int printf_37(void);
 int printf_char(va_list val);
-
+int printf_string(va_list val);
 int _putchar(char c);
+void ret_buff(char *str, unsigned int n);
 int printf_exit(stackvar *stack);
 int _printf(const char *format, ...);
+
+void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 #endif
