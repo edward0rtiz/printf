@@ -5,7 +5,7 @@
  * @stack: type struct va_arg where is allocated printf arguments
  *
  */
-int create_int(stackvar *stack, long int n)
+void create_int(stackvar *stack, long int n)
 {
 	int a;
 	long int size = 1;
@@ -50,7 +50,7 @@ int create_int(stackvar *stack, long int n)
  * @stack: type struct va_arg where is allocated printf arguments
  *
  */
-int printf_int(stackvar *stack)
+void printf_int(stackvar *stack)
 {
 	int n;
 
@@ -64,7 +64,7 @@ int printf_int(stackvar *stack)
  * @stack: type struct va_arg where is allocated printf arguments
  *
  */
-int printf_lint(stackvar *stack)
+void printf_lint(stackvar *stack)
 {
 	long int n;
 

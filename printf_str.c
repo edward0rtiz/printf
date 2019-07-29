@@ -1,18 +1,39 @@
 #include "holberton.h"
 /**
+ * _putchar - writes the character c to stdout
+ * @c: The character to print
+ * Return: On success 1.
+ *
+ */
+int _putchar(char c)
+{
+	return (write(1, &c, 1));
+}
+
+/**
+ * ret_buff - prints input buffer
+ * @str: buffer to print
+ * @n: type unsigned int
+ * Return: STDOUT_FILE
+ *
+ */
+void ret_buff(char *str, unsigned int n)
+{
+	write(STDOUT_FILENO, str, l);
+}
+
+/**
  * _strlen - Returns the lenght of a string.
  * @s: Type char pointer
  * Return: c.
  */
 int _strlen(char *s)
 {
-	int c;
+	unsigned int c = 0;
 
-	for (c = 0; s[c] != 0; c++)
-	{
-	}
-	return (c);
-
+	while (s[len] != '\0')
+		len++;
+	return (len);
 }
 /**
  * *_strcpy - Copies the string pointed to by src.
@@ -20,7 +41,7 @@ int _strlen(char *s)
  * @src: Type char pointer
  * Return: Always 0.
  */
-char *_strcpy(char *dest, char *src)
+int *_strcpy(char *dest, char *src)
 {
 
 	int a;
@@ -39,7 +60,7 @@ char *_strcpy(char *dest, char *src)
  * @s: Type char pointer
  * Return: Always 0.
  */
-void rev_string(char *s)
+int rev_string(char *s)
 {
 	int a, b;
 	int let;
