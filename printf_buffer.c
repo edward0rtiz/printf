@@ -5,24 +5,22 @@
  *
  */
 
-void create_buffer(stackvar *stack)
+int create_buffer(stackvar *stack)
 {
-	unsigned int new_b;
-	unsigned int old_b;
+	unsigned int new_b, old_b;
 	char *tmp;
 
 	if (stack->buffer)
 	{
 		stack->buffer[stack->counter_b++] = stack->char1;
+
 		if ((stack->counter_b + 1) % BUFFERSIZE == 0)
 		{
 			old_b = stack->counter_b + 1;
 			new_b = old_b + BUFFERSIZE;
-			tmp = realloc(stack->buffer, new_b, old_b);
+			tmp = realloc(stack->buffer, old_b, new_b);
 			if (!tmp)
-			{
 				stack->error = 1;
-			}
 			else
 				stack->buffer = tmp;
 		}
@@ -35,10 +33,9 @@ void create_buffer(stackvar *stack)
  * @str: type char pointr of string
  *
  */
-void place_buffer(stackvar *stack, char *str)
+int place_buffer(stackvar *stack, char *str)
 {
-	int i;
-	int j;
+	int i, j;
 
 	j = _strlen(str);
 
