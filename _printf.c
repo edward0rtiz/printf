@@ -12,7 +12,7 @@ int _printf(const char * const format, ...)
 		{"%%", printf_37}
 	};
 	va_list args;
-	int i = 0, j, len = 0, len_s = 1;
+	int i = 0, j, len = 0;
 
 	if (format == NULL)
 		return (-1);
@@ -26,17 +26,16 @@ Here:
 		{
 			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
 			{
-				len_s = m[j].f(args);
+				len += m[j].f(args);
 				i = i + 2;
 				goto Here;
 			}
 			j--;
 		}
 		_putchar(format[i]);
+		len++;
 		i++;
-		len = len + len_s;
 	}
-	len = (len + i) / 2;
 	va_end(args);
 	return (len);
 }
