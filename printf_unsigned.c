@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * printf_int - prints integer
+ * printf_unsigned - prints integer
  * @args: argument to print
  * Return: number of characters printed
  */
