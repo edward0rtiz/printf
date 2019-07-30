@@ -1,42 +1,90 @@
 #include "holberton.h"
 /**
- * printf_int - create integer
- * @val: arguments.
- * Return: length of the number.
- *
+ * printf_int - prints integer
+ * @args: argument to print
+ * Return: number of characters printed
  */
-int printf_int(va_list val)
+int printf_int(va_list args)
 {
-	unsigned int t;
-	unsigned int aux;
-	int aux1, n;
-	unsigned int aux2;
-	unsigned int mns = 45;
+	int n = va_arg(args, int);
+	int num, last = n % 10,digit, exp = 1;
+	int  i = 1;
 
-	n = va_arg(val, int);
-	t = 0;
-	aux =  n > 0 ? n : n * (-1);
-	aux2 = 10;
-	if (n < 0)
-		_putchar(mns);
-	n = aux;
-	while (aux != 0)
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
 	{
-		aux = aux / 10;
-		t++;
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
 	}
-	for (; t > 1; t--)
+	if (num > 0)
 	{
-		aux1 = t - 3;
-		for (; aux1 >= 0; aux1--)
+		while (num / 10 != 0)
 		{
-			aux2 = 10 * aux2;
+			exp = exp * 10;
+			num = num / 10;
 		}
-		aux = n / aux2;
-		n = n % aux2;
-		_putchar(aux + '0');
-		aux2 = 10;
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
 	}
-	_putchar(n + '0');
-	return (aux);
+	_putchar(last + '0');
+
+	return (i);
+}
+
+/**
+ * printf_dec - prints decimal
+ * @args: argument to print
+ * Return: number of characters printed
+ */
+
+int printf_dec(va_list args)
+{
+	int n = va_arg(args, int);
+	int num, last = n % 10,digit;
+	int  i = 1;
+	int exp = 1;
+
+	n = n / 10;
+	num = n;
+
+	if (last < 0)
+	{
+		_putchar('-');
+		num = -num;
+		n = -n;
+		last = -last;
+		i++;
+	}
+	if (num > 0)
+	{
+		while (num / 10 != 0)
+		{
+			exp = exp * 10;
+			num = num / 10;
+		}
+		num = n;
+		while (exp > 0)
+		{
+			digit = num / exp;
+			_putchar(digit + '0');
+			num = num - (digit * exp);
+			exp = exp / 10;
+			i++;
+		}
+	}
+	_putchar(last + '0');
+
+	return (i);
 }
