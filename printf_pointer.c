@@ -9,7 +9,7 @@ int printf_pointer(va_list val)
 {
 	void *p;
 	char *s = "(nil)";
-	long int a;
+	long long int a;
 	int b;
 	int i;
 
@@ -23,7 +23,7 @@ int printf_pointer(va_list val)
 		return (i);
 	}
 
-	a = (long int)p;
+	a = (long long int)p;
 	_putchar('0');
 	_putchar('x');
 	b = printf_hex_aux(a);
