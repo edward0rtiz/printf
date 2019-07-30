@@ -8,36 +8,32 @@
 int printf_exclusive_string(va_list val)
 {
 	char *s;
-	int i, len, lenaux = 0;
+	int i, len = 0;
 	int cast;
 
 	s = va_arg(val, char *);
 	if (s == NULL)
 		s = "(null)";
-	len = _strlen(s);
-	lenaux = lenaux + len;
-	for (i = 0; i < len; i++)
+	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (s[i] < 32 || s[i] >= 127)
 		{
 			_putchar('\\');
 			_putchar('x');
-			lenaux = lenaux + 2;
+			len = len + 2;
 			cast = s[i];
 			if (cast < 16)
 			{
 				_putchar('0');
-				lenaux++;
+				len++;
 			}
-			else
-				lenaux = lenaux + 1;
-			printf_HEX_aux(cast);
-			i++;
+			len = len + printf_HEX_aux(cast);
 		}
 		else
 		{
 			_putchar(s[i]);
+			len++;
 		}
 	}
-	return (lenaux);
+	return (len);
 }
