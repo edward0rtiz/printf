@@ -7,16 +7,15 @@
 int _printf(const char * const format, ...)
 {
 	convert_match m[] = {
-		{"%s", printf_string},
-		{"%c", printf_char},
-		{"%%", printf_37},
-		{"%i", printf_int},
-		{"%d", printf_dec},
+		{"%s", printf_string}, {"%c", printf_char}, {"%%", printf_37},
+		{"%i", printf_int}, {"%d", printf_dec},
 		{"%r", printf_srev},
 		{"%R", printf_rot13},
 		{"%b", printf_bin},
 		{"%u", printf_unsigned},
-		{"%o", printf_oct}
+		{"%o", printf_oct},
+		{"%x", printf_hex},
+		{"%X", printf_HEX}
 	};
 	va_list args;
 	int i = 0, j, len = 0;
@@ -28,7 +27,7 @@ int _printf(const char * const format, ...)
 Here:
 	while (format[i] != '\0')
 	{
-		j = 9;
+		j = 11;
 		while (j >= 0)
 		{
 			if (m[j].id[0] == format[i] && m[j].id[1] == format[i + 1])
