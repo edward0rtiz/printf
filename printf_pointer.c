@@ -24,8 +24,8 @@ int printf_pointer(va_list val)
 	}
 
 	a = (long int)p;
-	b += _putchar('0');
-	b += _putchar('x');
-	b += printf_hex_aux(a);
-	return (b);
+	_putchar('0');
+	_putchar('x');
+	b = printf_hex_aux(a);
+	return (b + 2);
 }
