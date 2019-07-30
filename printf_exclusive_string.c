@@ -23,7 +23,7 @@ int printf_exclusive_string(va_list val)
 	else
 	{
 		len = _strlen(s);
-		lenaux =  lenaux + len;
+		lenaux = lenaux + len;
 		for (i = 0; i < len; i++)
 		{
 			if (s[i] < 32 || s[i] >= 127)
@@ -38,7 +38,7 @@ int printf_exclusive_string(va_list val)
 					lenaux++;
 				}
 				else
-					lenaux = lenaux + 2;
+					lenaux = lenaux + 1;
 				printf_HEX_aux(cast);
 				i++;
 			}
