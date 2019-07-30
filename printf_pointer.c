@@ -15,11 +15,14 @@ int printf_pointer(va_list val)
 
 	p = va_arg(val, void*);
 	if (p == NULL)
+	{
 		for (i = 0; s[i] != '\0'; i++)
 		{
 			_putchar(s[i]);
-			return (i);
 		}
+		return (i);
+	}
+
 	a = (long int)p;
 	_putchar('0');
 	_putchar('x');
