@@ -7,7 +7,7 @@
 int printf_int(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10,digit, exp = 1;
+	int num, last = n % 10, digit, exp = 1;
 	int  i = 1;
 
 	n = n / 10;
@@ -52,7 +52,7 @@ int printf_int(va_list args)
 int printf_dec(va_list args)
 {
 	int n = va_arg(args, int);
-	int num, last = n % 10,digit;
+	int num, last = n % 10, digit;
 	int  i = 1;
 	int exp = 1;
 
