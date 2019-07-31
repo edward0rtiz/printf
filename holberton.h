@@ -23,7 +23,7 @@ typedef struct format
 } convert_match;
 
 int printf_pointer(va_list val);
-int printf_hex_aux(long int num);
+int printf_hex_aux(unsigned long int num);
 int printf_HEX_aux(unsigned int num);
 int printf_exclusive_string(va_list val);
 int printf_HEX(va_list val);
