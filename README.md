@@ -1,5 +1,7 @@
 # printf
 
+[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/0)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/0)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/1)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/1)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/2)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/2)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/3)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/3)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/4)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/4)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/5)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/5)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/6)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/6)[![](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/images/7)](https://sourcerer.io/fame/edward0rtiz/edward0rtiz/printf/links/7)
+
 ### Description
 
 ------------
